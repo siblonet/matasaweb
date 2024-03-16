@@ -459,7 +459,7 @@ const KaliaPay = async (order) => {
     try {
         const customer = encodeURIComponent(document.getElementById('customerphone').value);
 
-        const response = await requesttoBackend('POST', `orders/${customer ? customer : "0701743686"}/matasa`, order);
+        const response = await requesttoBackend('POST', `orders/${customer ? customer : "0546174263"}/matasa`, order);
 
         if (response && response.orderid) {
             await deletePannier();
