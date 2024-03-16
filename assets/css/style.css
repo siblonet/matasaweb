@@ -74,7 +74,7 @@ Default CSS
   --pk: pink;
   --org: orange;
   --yw: yellow;
-  --gd: gold;
+  --gd: #007bff;
   --rpik: #b51867;
   --yfaa: #f49f0b;
   --: #;
@@ -813,7 +813,7 @@ Navbar CSS
   background: linear-gradient(to right,
       #1d191a 0%,
       #04af0c 20%,
-      gold 40%,
+      #007bff 40%,
       #000000 80%,
       #ff0000 90%) !important;
 }
@@ -8206,7 +8206,7 @@ Page Title CSS
   background: linear-gradient(to right,
       #1d191a 0%,
       #037703 20%,
-      gold 40%,
+      #007bff 40%,
       var(--black) 80%,
       var(--rd) 90%) !important;
 }
@@ -9196,7 +9196,7 @@ Checkout CSS
   background: linear-gradient(to right,
       #1d191a 0%,
       #037703 20%,
-      gold 40%,
+      #007bff 40%,
       var(--black) 80%,
       var(--rd) 90%) !important;
 }
@@ -10778,7 +10778,7 @@ Footer CSS
   background: linear-gradient(to right,
       #1d191a 0%,
       #037703 20%,
-      gold 40%,
+      #007bff 40%,
       #000000 80%,
       var(--rd) 90%) !important;
   overflow: hidden !important;
@@ -10838,7 +10838,7 @@ Footer CSS
   content: '';
   position: absolute;
   left: 0;
-  background-color: gold;
+  background-color: #007bff;
 }
 
 .single-footer-widget .footc {
@@ -10858,7 +10858,7 @@ Footer CSS
   content: '';
   position: absolute;
   left: 0;
-  background-color: gold;
+  background-color: #007bff;
 }
 
 .single-footer-widget .footd {
