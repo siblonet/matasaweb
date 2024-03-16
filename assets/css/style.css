@@ -56,11 +56,11 @@ Default CSS
 @import url("https://fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i&amp;display=swap");
 
 :root {
-  --companycoa: #1d191a;
-  --companycob: #d2b154;
+  --companycoa: #dc3545;
+  --companycob: #007bb5;
   --companycoc: #dc3545;
-  --companycod: #1d191a;
-  --companycoe: #1d191a;
+  --companycod: #dc3545;
+  --companycoe: #dc3545;
   --warning: #ffc107;
   --danger: #dc3545;
   --black: #000000;
