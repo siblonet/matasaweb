@@ -1,7 +1,7 @@
 async function ChangeSlade() {
     const items = await GetSettings();
     annoncePers = items;
-    console.loog(items);
+    console.log(items);
 
     if (items && items.length > 0) {
 
