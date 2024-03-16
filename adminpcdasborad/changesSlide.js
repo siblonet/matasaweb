@@ -1,6 +1,6 @@
 let annoncePers = [];
 
-(async function ($) {
+async function ChangeSlade() {
     const items = await GetSettings();
     annoncePers = items;
     console.loog(items);
@@ -13,7 +13,8 @@ let annoncePers = [];
         $("#logointerne").attr("src", "../assets/img/matasa.png");
     };
 
-})(jQuery);
+};
+ChangeSlade()
 
 const changeIcons = (event, which, idvalue) => {
     const slideaid = document.getElementById(idvalue).value;
