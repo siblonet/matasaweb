@@ -31,7 +31,7 @@ async function Inscription() {
                 motdepass: password,
                 email: email,
                 phone: phone,
-                owner: "nuance"
+                owner: "matasa"
             };
 
 
@@ -100,7 +100,7 @@ async function loGin() {
             motdepass: password,
         };
 
-        const response = await requesttoBackend('POST', 'people/login/nuance', person);
+        const response = await requesttoBackend('POST', 'people/login/matasa', person);
 
         if (response && response.ee) {
             load.classList.remove("load28")

@@ -102,7 +102,7 @@ async function changePeopleStatus(pro) {
         await requesttoBackend('PUT', `people/status/${clid}`, pro == "client" ? { staff: 'false', admin: "false" } : pro == "staff" ? { staff: 'true' } : { staff: 'true' });
 
         deletePeople();
-        const people = await requesttoBackend('GET', 'people/persons/nuance');
+        const people = await requesttoBackend('GET', 'people/persons/matasa');
         await PostPeople(people);
         initDataLoader();
 

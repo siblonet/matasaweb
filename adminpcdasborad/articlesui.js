@@ -149,7 +149,7 @@ function CreateArticle() {
                 addmarque: addmarque,
                 notes: notes,
                 barcode: addbarcode,
-                owner: "nuance",
+                owner: "matasa",
                 image: Onlineimas
             };
             document.getElementById("ajouteencou").innerText = "En cours"
@@ -158,7 +158,7 @@ function CreateArticle() {
                 try {
                     const createdProdec = await requesttoBackend('POST', 'boutique', product);
                     if (createdProdec) {
-                        const items = await requesttoBackend('GET', 'boutique/only/article/nuance');
+                        const items = await requesttoBackend('GET', 'boutique/only/article/matasa');
                         await deleteArticle();
                         await PostArticle(items);
                     }
@@ -369,7 +369,7 @@ async function EditeArticle() {
                 addcoul: addcoul,
                 addmarque: addmarque,
                 notes: notes,
-                owner: "nuance",
+                owner: "matasa",
                 barcode: addbarcode,
                 image: Onlineimas
 

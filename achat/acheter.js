@@ -153,7 +153,7 @@ async function sendCommen() {
                 lieu: adresseValue,
                 phone: telephoneValue,
                 note: notesValue,
-                owner: "nuance",
+                owner: "matasa",
                 client: mynam,
                 reduction: 0,
                 payment_method: payment_method,
@@ -184,7 +184,7 @@ async function sendCommen() {
                     motdepass: motValue,
                     email: emailValue,
                     phone: telephoneValue,
-                    owner: "nuance"
+                    owner: "matasa"
                 };
                 try {
                     const response = await requesttoBackend('POST', 'people', person);  // Await the result
@@ -214,7 +214,7 @@ async function sendCommen() {
                             lieu: adresseValue,
                             phone: telephoneValue,
                             note: notesValue,
-                            owner: "nuance",
+                            owner: "matasa",
                             reduction: 0,
                             client: clientid,
                             payment_method: payment_method,
@@ -300,7 +300,7 @@ async function loginCommage() {
                 motdepass: password,
             };
 
-            const responseData = await requesttoBackend('POST', 'people/login/nuance', userCredentials);
+            const responseData = await requesttoBackend('POST', 'people/login/matasa', userCredentials);
 
             if (!responseData) {
                 handleLoginError("Erreur inconnue, veuillez réessayer plus tard");
@@ -375,7 +375,7 @@ async function SendPanierToOrder(tocomp) {
         if (tocompl && tocompl.payment_method !== "cash" && tocompl.payment_method !== "null") {
             await KaliaPay(tocompl);
         } else if (tocompl) {
-            const response = await requesttoBackend('POST', 'orders/nuance', tocompl);
+            const response = await requesttoBackend('POST', 'orders/matasa', tocompl);
 
             if (response && response.created_order) {
                 await deletePannier();
@@ -459,7 +459,7 @@ const KaliaPay = async (order) => {
     try {
         const customer = encodeURIComponent(document.getElementById('customerphone').value);
 
-        const response = await requesttoBackend('POST', `orders/${customer ? customer : "0701743686"}/nuance`, order);
+        const response = await requesttoBackend('POST', `orders/${customer ? customer : "0701743686"}/matasa`, order);
 
         if (response && response.orderid) {
             await deletePannier();

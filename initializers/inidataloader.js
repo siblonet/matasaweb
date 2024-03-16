@@ -14,10 +14,10 @@ async function initDataLoader() {
         deleteSetting();
         deletePeople();
 
-        const online = await requesttoBackend('GET', 'boutique/nuance');
+        const online = await requesttoBackend('GET', 'boutique/matasa');
         if (online.article || online.pagesetting || online.order) {
 
-            const people = await requesttoBackend('GET', 'people/persons/nuance');
+            const people = await requesttoBackend('GET', 'people/persons/matasa');
             await PostPeople(people);
             await PostOrder(online.order);
             await PostArticle(online.article);
