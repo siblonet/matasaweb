@@ -369,8 +369,8 @@ async function showProductQuickView(a, productId) {
     if (!result) {
         imagefolder = product.image;
 
-        const splo = product.addcoul.split(",") ? product.addcoul.split(",") : "gold";
-        const colora = splo[0] == "null" ? "gold" : splo[0] == "#ffffff" || "#FFFFFF" ? "gold" : splo[0];
+        const splo = product.addcoul.split(",") ? product.addcoul.split(",") : "#007bff";
+        const colora = splo[0] == "null" ? "#007bff" : splo[0] == "#ffffff" || "#FFFFFF" ? "#007bff" : splo[0];
 
         document.getElementById('coloholder').innerText = product.addcoul;
 
@@ -413,8 +413,8 @@ async function showProductQuickView(a, productId) {
             linkElement.setAttribute('href', newURL);
         }
     } else {
-        const splo = product.addcoul.split(",") ? product.addcoul.split(",") : "gold";
-        const colora = splo[0] == "null" ? "gold" : splo[0] == "#ffffff" || "#FFFFFF" ? "gold" : splo[0];
+        const splo = product.addcoul.split(",") ? product.addcoul.split(",") : "#007bff";
+        const colora = splo[0] == "null" ? "#007bff" : splo[0] == "#ffffff" || "#FFFFFF" ? "#007bff" : splo[0];
 
         document.getElementById('coloholder').innerText = product.addcoul;
 
