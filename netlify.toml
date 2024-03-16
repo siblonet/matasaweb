@@ -1,16 +1,16 @@
 [[redirects]]
 from = "admin"
-to = "/admin/admindasboad.html"
+to = "/adminpcdasborad/admindasboad.html"
 status = 200
 
 [[redirects]]
 from = "admini"
-to = "/adminmobile/admindasdboard.html"
+to = "/adminphonedasbord/admindasdboard.html"
 status = 200
 
 [[redirects]]
 from = "client"
-to = "/clientmobile/clientdasbord.html"
+to = "/clientdashboard/clientdasbord.html"
 status = 200
 
 
