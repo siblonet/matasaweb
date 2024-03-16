@@ -1,5 +1,3 @@
-let annoncePers = [];
-
 async function ChangeSlade() {
     const items = await GetSettings();
     annoncePers = items;
