@@ -21,6 +21,7 @@ async function initDataLoader() {
             await PostPeople(people);
             await PostOrder(online.order);
             await PostArticle(online.article);
+            console.log(online.pagesetting);
             await PostSettings(online.pagesetting);
             recentProduct(online.article);
 
