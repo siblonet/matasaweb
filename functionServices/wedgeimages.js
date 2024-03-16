@@ -6,7 +6,7 @@ async function setLogin() {
         $(".page-linear").css("background-image", `url(${items.find(item => item.which === "loginimg") ? items.find(item => item.which === "loginimg").image : "assets/img/error-404.png"})`);
         $(".bg-image1").css("background-image", `url(${items.find(item => item.which === "backglise") ? items.find(item => item.which === "backglise").image : "assets/img/error-404.png"})`);
     } else {
-        $(".nobleim").attr("src", "assets/img/logo.png");
+        $(".nobleim").attr("src", "assets/img/matasa.png");
         $(".page-linear").css("background-image", "url(/assets/img/error-404.png)");
         $(".bg-image1").css("background-image", "url(/assets/img/error-404.png)");
     }
