@@ -184,7 +184,7 @@ function recentProduct(recenPr) {
 
 
                             <div class="products-content">
-                                <span class="category" style="color: ${product.addcoul.substring(0, 7)};">Parfum</span>
+                                <span class="category" style="color: ${product.addcoul.substring(0, 7)};"></span>
                                 <h3><a href="detaila?ov=${product._id}">${product.addarticle}</a></h3>
                                 <div class="star-rating">
                                     <i class="bx bxs-star"></i>
@@ -279,7 +279,7 @@ function recentProduct(recenPr) {
 
 
                 <div class="products-content">
-                    <span class="category" style="color: ${product.addcoul.substring(0, 7)};">Parfum</span>
+                    <span class="category" style="color: ${product.addcoul.substring(0, 7)};"></span>
                     <h3><a href="detaila?ov=${product._id}">${product.addarticle}</a></h3>
                     <div class="star-rating">
                         <i class="bx bxs-star"></i>
