@@ -343,6 +343,7 @@ function recentProduct(recenPr) {
             const element = document.getElementById(productIdShared);
 
             if (element) {
+            console.log(productIdShared);
                 element.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
