@@ -86,6 +86,7 @@ async function navigateAdminCLient() {
 
 function getUrlParameter() {
     const hash = window.location.hash.substring(1);
+    console.log(hash);
     return hash;
 }
 
