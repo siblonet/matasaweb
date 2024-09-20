@@ -86,7 +86,6 @@ async function navigateAdminCLient() {
 
 function getUrlParameter() {
     const hash = window.location.hash.substring(1);
-    console.log(hash);
     return hash;
 }
 
@@ -340,11 +339,10 @@ function recentProduct(recenPr) {
         if (!retriva || retriva.length < 5) {
 
         } else {
-            const productIdShared = `#${retriva}`; // Replace with the actual product ID
-            const element = document.getElementById(productIdShared);
+            //const productIdShared = `#${retriva}`; // Replace with the actual product ID
+            const element = document.getElementById(retriva);
 
             if (element) {
-            console.log(productIdShared);
                 element.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
