@@ -30,10 +30,9 @@ async function initDataLoader() {
 
                 const people = await requesttoBackend('GET', 'people/persons/matasa');
                 await PostPeople(people);
-                await PostOrder(online.order);
+                await PostOrder(online.order ? online.order : []);
                 await PostArticle(online.article);
-                await PostSettings(online.pagesetting);
-
+                await PostSettings(online.pagesetting ? online.pagesetting : []);
             }
             NafigatioTo("dasboard");
 
