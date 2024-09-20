@@ -6,6 +6,17 @@ let ActiveAna;
 let adminiSpacea;
 
 
+function copyToClipboard(text) {
+    if (!text) {
+        console.warn('No data to copy');
+        return;
+    }
+    navigator.clipboard.writeText(text).then(() => {
+        alert('Copied to clipboard: ' + text); // Optional: Show alert to user
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
+}
 
 function ArticlesUI(ActiveDas, ActiveCo, ActiveCl, ActiveAr, ActiveAn, adminiSpace) {
     
@@ -49,7 +60,7 @@ function ArticlesUI(ActiveDas, ActiveCo, ActiveCl, ActiveAr, ActiveAn, adminiSpa
                        
                             <div class="imageholder">
                                
-                                <img src="${article.image[0] ? article.image[0].ima : ''}" alt="image1">
+                                <img src="${article.image[0] ? article.image[0].ima : ''}" alt="image1" onclick="copyToClipboard('https://matasamarket.netlify.app/#${article._id}')">
 
 
                             </div>
