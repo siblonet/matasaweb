@@ -83,6 +83,12 @@ async function navigateAdminCLient() {
     getUsenam();
 }
 
+
+function getUrlParameter() {
+    const hash = window.location.hash.substring(1);
+    return hash;
+}
+
 function recentProduct(recenPr) {
     const ProdAvailable = [];
     const productContainer = document.getElementById('product-container');
@@ -326,6 +332,22 @@ function recentProduct(recenPr) {
         const loaderRemove = document.getElementById('loaderRemove');
         loaderRemove.innerHTML = "";
         loaderRemove.style.display = "none";
+
+
+        const retriva = getUrlParameter();
+
+        if (!retriva || retriva.length < 5) {
+
+        } else {
+            const productIdShared = `#${retriva}`; // Replace with the actual product ID
+            const element = document.getElementById(productIdShared);
+
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+
     } else {
         const tokens = sessionStorage.getItem('tibule');
         const productHTML = `
