@@ -105,7 +105,7 @@ function recentProduct(recenPr) {
         ProdAvailable.forEach(product => {
             const percentDf = ((product.addprix - product.addreduction) / product.addprix) * 100;
             const productHTML = `
-                    <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="col-lg-4 col-md-6 col-sm-6" id="${product._id}">
 
                         ${isMobileDevice() ?
                     `
