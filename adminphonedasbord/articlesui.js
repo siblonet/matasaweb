@@ -137,7 +137,7 @@ function CreateArticle() {
         const notes = document.getElementById('notes').value;
 
 
-        if (addarticle && addgenre && addbarcode && addprix && addmarque && Onlineimas.length > 0) {
+        if (addarticle && addgenre && addprix && addmarque && Onlineimas.length > 0) {
             const product = {
                 id_has: Math.floor(Math.random() * 100000000).toString(),
                 addarticle: addarticle,
@@ -357,7 +357,7 @@ async function EditeArticle() {
         const notes = document.getElementById('editenotes').value;
 
 
-        if (addarticle && addgenre && addbarcode && addprix && addcoul && addmarque) {
+        if (addarticle && addgenre && addprix && addcoul && addmarque) {
             const product = {
                 id_has: _id,
                 addarticle: addarticle,
