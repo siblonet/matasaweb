@@ -157,9 +157,9 @@ function CreateArticle() {
 
             const createItem = async () => {
                 try {
-                    const createdProdec = await requesttoBackend('POST', 'boutique', product);
+                    const createdProdec = await requesttoBackend('POST', 'matasa', product);
                     if (createdProdec) {
-                        const items = await requesttoBackend('GET', 'boutique/only/article/matasa');
+                        const items = await requesttoBackend('GET', 'matasa/only/article/matasa');
                         await deleteArticle();
                         await PostArticle(items);
                     }
@@ -193,7 +193,7 @@ async function AddArticleImage() {
     const reader = new FileReader();
     reader.onload = async function (event) {
         const base64Data = event.target.result.split(',')[1];
-        const url = await requesttoBackend('POST', 'boutique/uploadImage', { ima: base64Data, nam: file.name });
+        const url = await requesttoBackend('POST', 'matasa/uploadImage', { ima: base64Data, nam: file.name });
         const imarandomid = Math.floor(Math.random() * 100000000).toString()
         Onlineimas.push({ ima: url.ima, has_aidii: imarandomid });
 
@@ -304,7 +304,7 @@ async function EditeArticleImage() {
     reader.onload = async function (event) {
         const base64Data = event.target.result.split(',')[1];
 
-        const response = await fetch(apiUrlfine + "boutique/uploadImage", {
+        const response = await fetch(apiUrlfine + "matasa/uploadImage", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -377,7 +377,7 @@ async function EditeArticle() {
 
             const createItem = async () => {
                 try {
-                    await requesttoBackend('PUT', `boutique/${_id}`, product);
+                    await requesttoBackend('PUT', `matasa/${_id}`, product);
                     initDataLoader();
 
                 } catch (error) {
@@ -400,7 +400,7 @@ async function RemoveArticleById() {
 
     if (result) {
         const _ide = document.getElementById("ediatiid").value;
-        await requesttoBackend('DELETE', `boutique/${_ide}`);
+        await requesttoBackend('DELETE', `matasa/${_ide}`);
         Onlineimas.length = 0;
         initDataLoader();
     }

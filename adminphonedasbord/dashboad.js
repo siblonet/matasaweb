@@ -288,7 +288,7 @@ const NavBaractivity = () => {
 
 
   (async () => {
-    const version = await requesttoBackend('GET', 'boutique/version/new/pc/software/phone');
+    const version = await requesttoBackend('GET', 'matasa/version/new/pc/software/phone');
     if (version.version > 0) {
       document.getElementById("mobileUrl").value = version.url;
       document.getElementById("ApplicationMobile").innerText = 1;

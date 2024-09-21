@@ -282,9 +282,9 @@ const NavBaractivity = () => {
 
   }).catch((error) => console.log(error));
 
-  GetPeople("person").then((people) => {
+  GetPeople("person").then((matasa_people) => {
 
-    document.getElementById('PeoplesNum').innerText = people.length;
+    document.getElementById('PeoplesNum').innerText = matasa_people.length;
   }).catch((error) => console.log(error));
 
 
@@ -302,14 +302,14 @@ const NavBaractivity = () => {
   }).catch((error) => console.log(error));
 
 
-  GetPeople("Anony").then((people) => {
+  GetPeople("Anony").then((matasa_people) => {
 
-    document.getElementById('PeoplesNumAnony').innerText = people.length;
+    document.getElementById('PeoplesNumAnony').innerText = matasa_people.length;
   }).catch((error) => console.log(error));
 
 
   (async () => {
-    const version = await requesttoBackend('GET', 'boutique/version/new/pc/software/phone');
+    const version = await requesttoBackend('GET', 'matasa/version/new/pc/software/phone');
     if (version.version > 0) {
       document.getElementById("mobileUrl").value = version.url;
       document.getElementById("ApplicationMobile").innerText = 1;

@@ -109,7 +109,7 @@ const SladeLoading = (which) => {
 
 
 async function sendAnnonce(base64Data, fileName, which, anonceid) {
-    const response = await fetch(apiUrlfine + `boutique/annonce/matasa/${anonceid}`, {
+    const response = await fetch(apiUrlfine + `matasa/annonce/matasa/${anonceid}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

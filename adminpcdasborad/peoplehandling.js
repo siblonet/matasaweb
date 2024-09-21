@@ -35,8 +35,8 @@ function PeopleHandle(who, ActiveDas, ActiveCo, ActiveCl, ActiveAr, ActiveAn, ad
 
     const tbodyId = document.getElementById('tbody-client');
     tbodyId.innerHTML = '';
-    GetPeople(who).then((people) =>
-        people.forEach(person => {
+    GetPeople(who).then((matasa_people) =>
+        matasa_people.forEach(person => {
             const clientTBODY =
                 `
                     <tr  style="cursor: pointer" data-toggle="modal" data-target="#optionClient" onclick="openClientforedit('${person._id}', 'online')" >
@@ -99,11 +99,11 @@ async function openClientforedit(clid, whos) {
 async function changePeopleStatus(pro) {
     if (isAdmin) {
         const clid = document.getElementById('clientid').value;
-        await requesttoBackend('PUT', `people/status/${clid}`, pro == "client" ? { staff: 'false', admin: "false" } : pro == "staff" ? { staff: 'true' } : { staff: 'true' });
+        await requesttoBackend('PUT', `matasa_people/status/${clid}`, pro == "client" ? { staff: 'false', admin: "false" } : pro == "staff" ? { staff: 'true' } : { staff: 'true' });
 
         deletePeople();
-        const people = await requesttoBackend('GET', 'people/persons/matasa');
-        await PostPeople(people);
+        const matasa_people = await requesttoBackend('GET', 'matasa_people/persons/matasa');
+        await PostPeople(matasa_people);
         initDataLoader();
 
     } else {
@@ -126,7 +126,7 @@ async function deleteUser() {
             if (myode) {
                 alert("Supprimez dabord ses commandes")
             } else {
-                await requesttoBackend('DELETE', `people/${clid}`);
+                await requesttoBackend('DELETE', `matasa_people/${clid}`);
                 initDataLoader();
             }
         }

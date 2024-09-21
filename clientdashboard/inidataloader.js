@@ -26,7 +26,7 @@ async function initDataLoader() {
             const token = sessionStorage.getItem('tibule');
             const splo = token.split("°");
             const userid = thisiswhat(`${splo[0]}`);
-            const data = await requesttoBackend('GET', `orders/myorder/${userid}`);
+            const data = await requesttoBackend('GET', `matasa_orders/myorder/${userid}`);
             if (data) {
                 await PostOrder(data);
             };

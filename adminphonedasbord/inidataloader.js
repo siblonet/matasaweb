@@ -25,7 +25,7 @@ async function initDataLoader() {
             deleteSetting();
             deletePeople();
 
-            const online = await requesttoBackend('GET', 'boutique/matasa');
+            const online = await requesttoBackend('GET', 'matasa/matasa');
             if (online.article || online.pagesetting || online.order) {
 
                 const people = await requesttoBackend('GET', 'people/persons/matasa');

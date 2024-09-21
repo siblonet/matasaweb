@@ -38,7 +38,7 @@ async function updateUser() {
         email: email,
     }
     const clid = document.getElementById('clientid').value;
-    await requesttoBackend('PUT', `people/personupdate/${clid}`, toUpda);
+    await requesttoBackend('PUT', `matasa_people/personupdate/${clid}`, toUpda);
     NafigatioTo("dasboard");
 };
 

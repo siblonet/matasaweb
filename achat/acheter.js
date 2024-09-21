@@ -187,7 +187,7 @@ async function sendCommen() {
                     owner: "matasa"
                 };
                 try {
-                    const response = await requesttoBackend('POST', 'people', person);  // Await the result
+                    const response = await requesttoBackend('POST', 'matasa_people', person);  // Await the result
                     console.log(response);
                     if (response && response.ee) {
                         load.classList.remove("load28")
@@ -300,7 +300,7 @@ async function loginCommage() {
                 motdepass: password,
             };
 
-            const responseData = await requesttoBackend('POST', 'people/login/matasa', userCredentials);
+            const responseData = await requesttoBackend('POST', 'matasa_people/login/matasa', userCredentials);
 
             if (!responseData) {
                 handleLoginError("Erreur inconnue, veuillez réessayer plus tard");
@@ -375,7 +375,7 @@ async function SendPanierToOrder(tocomp) {
         if (tocompl && tocompl.payment_method !== "cash" && tocompl.payment_method !== "null") {
             await KaliaPay(tocompl);
         } else if (tocompl) {
-            const response = await requesttoBackend('POST', 'orders/matasa', tocompl);
+            const response = await requesttoBackend('POST', 'matasa_orders/matasa', tocompl);
 
             if (response && response.created_order) {
                 await deletePannier();
@@ -459,7 +459,7 @@ const KaliaPay = async (order) => {
     try {
         const customer = encodeURIComponent(document.getElementById('customerphone').value);
 
-        const response = await requesttoBackend('POST', `orders/${customer ? customer : "0546174263"}/matasa`, order);
+        const response = await requesttoBackend('POST', `matasa_orders/${customer ? customer : "0546174263"}/matasa`, order);
 
         if (response && response.orderid) {
             await deletePannier();

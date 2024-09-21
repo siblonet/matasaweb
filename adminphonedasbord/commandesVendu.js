@@ -21,10 +21,10 @@ async function CommandesVendu(ActiveDas, ActiveCo, ActiveCl, ActiveAr, ActiveAn,
     let TotalRecet = 0;
 
     const ordersnotAvail = await GetOrder();
-    const orders = ordersnotAvail.filter((reveiw) => reveiw.statut == "done");
+    const matasa_orders = ordersnotAvail.filter((reveiw) => reveiw.statut == "done");
 
-    if (orders && orders.length > 0) {
-        orders.forEach((pan) => {
+    if (matasa_orders && matasa_orders.length > 0) {
+        matasa_orders.forEach((pan) => {
             TotalRecet += parseInt(pan.reduction);
         });
     }
@@ -37,7 +37,7 @@ async function CommandesVendu(ActiveDas, ActiveCo, ActiveCl, ActiveAr, ActiveAn,
                 <div class="welcome-msg pt-3 pb-4" id="">
                     <h1 style="margin-left: 25px;">Total: <span style="font-weight: bold">${(TotalRecet / 1000).toFixed(3)}</span> F.CFA</h1>
                 </div>
-        ${orders.map((order) => {
+        ${matasa_orders.map((order) => {
         return `
             <div class="articlerow">
       
@@ -125,14 +125,14 @@ const filterOrder = async () => {
 
     const ordersnotAvail = await GetOrder();
     const ordersStatusDone = ordersnotAvail.filter((reveiw) => reveiw.statut == "done");
-    const orders = filterArrayByDateRange(ordersStatusDone, startDate, endDate);
+    const matasa_orders = filterArrayByDateRange(ordersStatusDone, startDate, endDate);
 
-    if (orders && orders.length > 0) {
-        orders.forEach((pan) => {
+    if (matasa_orders && matasa_orders.length > 0) {
+        matasa_orders.forEach((pan) => {
             TotalRecet += parseInt(pan.reduction);
         });
     }
-    if (orders && orders.length > 0) {
+    if (matasa_orders && matasa_orders.length > 0) {
 
         ordersHTML += `
             <br>
@@ -142,7 +142,7 @@ const filterOrder = async () => {
                 <h1 style="margin-left: 25px;">Total: <span style="font-weight: bold">${TotalRecet}</span> F.CFA</h1>
             </div>
               
-        ${orders.map((order) => {
+        ${matasa_orders.map((order) => {
             return `
             <div class="articlerow">
       

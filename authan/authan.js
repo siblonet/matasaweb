@@ -35,7 +35,7 @@ async function Inscription() {
             };
 
 
-            const response = await requesttoBackend('POST', 'people', person);
+            const response = await requesttoBackend('POST', 'matasa_people', person);
             if (response && response.ee) {
                 load.classList.remove("load28")
                 load.classList.add("tohi")
@@ -100,7 +100,7 @@ async function loGin() {
             motdepass: password,
         };
 
-        const response = await requesttoBackend('POST', 'people/login/matasa', person);
+        const response = await requesttoBackend('POST', 'matasa_people/login/matasa', person);
 
         if (response && response.ee) {
             load.classList.remove("load28")

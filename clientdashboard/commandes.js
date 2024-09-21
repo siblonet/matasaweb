@@ -41,14 +41,14 @@ async function Commandes(who, ActiveDasboard, ActiveAttentes, ActiveEncours, Act
     let ordersHTML = '';
 
     const ordersnotAvail = await GetOrder();
-    const orders = ordersnotAvail.filter((reveiw) => reveiw.statut == who);
+    const matasa_orders = ordersnotAvail.filter((reveiw) => reveiw.statut == who);
 
 
     ordersHTML += `
                 <br>
                 <br>
                 <br>
-        ${orders.map((order) => {
+        ${matasa_orders.map((order) => {
         return `
             <div class="articlerow">
       
@@ -151,21 +151,21 @@ const filterOrder = async () => {
     let ordersHTML = '';
 
     const ordersnotAvail = await GetOrder();
-    const orders = filterArrayByDateRange(ordersnotAvail, startDate, endDate);
+    const matasa_orders = filterArrayByDateRange(ordersnotAvail, startDate, endDate);
     
     function isMobileDevice() {
         const userAgent = navigator.userAgent.toLowerCase();
         return userAgent.includes('mobile');
     };
 
-    if (orders && orders.length > 0) {
+    if (matasa_orders && matasa_orders.length > 0) {
 
         ordersHTML += `
             <br>
             <br>
             <br>
               
-        ${orders.map((order) => {
+        ${matasa_orders.map((order) => {
             return `
             <div class="articlerow">
       
@@ -347,10 +347,10 @@ async function cancelOrderById() {
 
         const vin_or = await GetOrderByID(ido);
         if (vin_or.articles.length > 1) {
-            await requesttoBackend('DELETE', `orders/oarderar/${ido}/${proid}/${arti_id}/${quan}`);
+            await requesttoBackend('DELETE', `matasa_orders/oarderar/${ido}/${proid}/${arti_id}/${quan}`);
 
         } else {
-            await requesttoBackend('DELETE', `orders/${ido}/${arti_id}/${quan}`);
+            await requesttoBackend('DELETE', `matasa_orders/${ido}/${arti_id}/${quan}`);
 
         }
         window.location.reload()

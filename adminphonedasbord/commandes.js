@@ -10,14 +10,14 @@ async function CommandesFonc(ActiveDas, ActiveCo, ActiveCl, ActiveAr, ActiveAn, 
     let ordersHTML = '';
 
     const ordersnotAvail = await GetOrder();
-    const orders = ordersnotAvail.filter((reveiw) => reveiw.statut !== "done");
+    const matasa_orders = ordersnotAvail.filter((reveiw) => reveiw.statut !== "done");
 
     ordersHTML += `
                 <br>
                 <br>
                 <br>
               
-        ${orders.map((order) => {
+        ${matasa_orders.map((order) => {
         return `
             <div class="articlerow">
       
@@ -199,7 +199,7 @@ async function openOrderforediting(orderid, orderarticleid, articleid) {
 async function selectStatusChange(sta = null) {
     if (sta) {
         const ido = document.getElementById('ido').value;
-        await requesttoBackend('PUT', `orders/change/order/statuts/${ido}`, { statut: sta });
+        await requesttoBackend('PUT', `matasa_orders/change/order/statuts/${ido}`, { statut: sta });
     }
 };
 
@@ -215,10 +215,10 @@ async function cancelOrderById() {
 
         const vin_or = await GetOrderByID(ido);
         if (vin_or.articles.length > 1) {
-            await requesttoBackend('DELETE', `orders/oarderar/${ido}/${proid}/${arti_id}/${quan}`);
+            await requesttoBackend('DELETE', `matasa_orders/oarderar/${ido}/${proid}/${arti_id}/${quan}`);
 
         } else {
-            await requesttoBackend('DELETE', `orders/${ido}/${arti_id}/${quan}`);
+            await requesttoBackend('DELETE', `matasa_orders/${ido}/${arti_id}/${quan}`);
 
         }
 

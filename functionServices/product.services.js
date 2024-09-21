@@ -42,14 +42,14 @@ async function PostPannier(panier) {
 }
 
 
-async function PostOrder(orders) {
+async function PostOrder(matasa_orders) {
     const orderdb = await openOrdersDatabase();
     const POTransation = orderdb.transaction(["OrderdStore"], "readwrite");
     const POStore = POTransation.objectStore("OrderdStore");
 
 
     let added = false;
-    orders.map(order => {
+    matasa_orders.map(order => {
         const adding = POStore.add(order);
 
         adding.onsuccess = () => {
@@ -65,13 +65,13 @@ async function PostOrder(orders) {
     return added
 }
 
-async function PostPeople(people) {
+async function PostPeople(matasa_people) {
     const peopledb = await openPeopleDatabase();
     const PpTransation = peopledb.transaction(["PeopleContent"], "readwrite");
     const PpStore = PpTransation.objectStore("PeopleContent");
 
     let added = false;
-    people.map(person => {
+    matasa_people.map(person => {
         const adding = PpStore.add(person);
 
         adding.onsuccess = () => {
@@ -330,15 +330,15 @@ async function GetOrder() {
 
 
     return new Promise((resolve, reject) => {
-        const orders = [];
+        const matasa_orders = [];
 
         GOStore.openCursor().onsuccess = (event) => {
             const cursor = event.target.result;
             if (cursor) {
-                orders.push(cursor.value);
+                matasa_orders.push(cursor.value);
                 cursor.continue();
             } else {
-                resolve(orders);
+                resolve(matasa_orders);
             }
         };
 
